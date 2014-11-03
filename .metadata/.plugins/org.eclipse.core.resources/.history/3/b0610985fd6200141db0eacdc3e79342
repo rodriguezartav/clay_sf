@@ -35,21 +35,9 @@
     <deploymentStatus>Deployed</deploymentStatus>
     <description>Each Customer App</description>
     <enableActivities>true</enableActivities>
-    <enableFeeds>true</enableFeeds>
+    <enableFeeds>false</enableFeeds>
     <enableHistory>true</enableHistory>
     <enableReports>true</enableReports>
-    <fields>
-        <fullName>Org_App_Name__c</fullName>
-        <caseSensitive>false</caseSensitive>
-        <externalId>false</externalId>
-        <label>Org_App_Name</label>
-        <length>150</length>
-        <required>true</required>
-        <trackFeedHistory>false</trackFeedHistory>
-        <trackHistory>false</trackHistory>
-        <type>Text</type>
-        <unique>true</unique>
-    </fields>
     <fields>
         <fullName>Org__c</fullName>
         <deleteConstraint>SetNull</deleteConstraint>
@@ -59,7 +47,6 @@
         <relationshipLabel>Apps</relationshipLabel>
         <relationshipName>Apps</relationshipName>
         <required>false</required>
-        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Lookup</type>
     </fields>
@@ -68,7 +55,6 @@
         <externalId>false</externalId>
         <label>Version History</label>
         <length>32768</length>
-        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>LongTextArea</type>
         <visibleLines>3</visibleLines>
@@ -80,7 +66,6 @@
         <precision>4</precision>
         <required>true</required>
         <scale>0</scale>
-        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Number</type>
         <unique>false</unique>
@@ -88,17 +73,11 @@
     <label>App</label>
     <listViews>
         <fullName>All</fullName>
-        <columns>NAME</columns>
-        <columns>Org__c</columns>
-        <columns>Version__c</columns>
-        <columns>CREATED_DATE</columns>
-        <columns>LAST_UPDATE</columns>
         <filterScope>Everything</filterScope>
         <label>All</label>
     </listViews>
     <nameField>
         <label>App Name</label>
-        <trackFeedHistory>true</trackFeedHistory>
         <trackHistory>false</trackHistory>
         <type>Text</type>
     </nameField>
