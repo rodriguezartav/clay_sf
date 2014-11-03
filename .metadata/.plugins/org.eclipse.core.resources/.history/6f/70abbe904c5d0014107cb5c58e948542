@@ -1,0 +1,76 @@
+@RestResource(urlMapping='/clay-api/*')
+global class  ClayController {
+    
+    //handleRest receives an REST Operation['get,post,put,del'] a url and a JSON
+
+	/*
+		Class Entry Point for Visualforce Remoting
+		It requires: 
+			An HTTP VERB that defines what operation to perform ['get,post,put,del']
+			An Url that defines the targeted object or custom operation to be performaned
+			An optional Fields argument for upsert and query operations
+	*/
+	
+	@HttpGet
+    global static string authenticate() {
+    	RestRequest req = RestContext.request;
+
+    	string action = req.params.get('action');
+    	string app_name = req.params.get('app_name');
+    	string dev_code = req.params.get('dev_code');
+		string app_org = req.params.get('app_org');
+
+		if(action == 'APP'){
+			app__c app = getApp(app_name, dev_code, app_org, false);
+			if(app == null){ return '{}'; }
+			else{ return JSON.serialize(app); }
+		}else{
+			return JSON.serializePretty( getDev('dev_code') );
+		}
+
+    }
+
+	@HttpPost
+    global static string upsertApp() {
+    	RestRequest req = RestContext.request;
+
+
+    	string app_name = req.params.get('app_name');
+    	string dev_code = req.params.get('dev_code');
+    	if(app_name == null || dev_code == null){
+    		return RemoteTKController.makeError('Wrong params provided in query, app_name and dev_code required','WRONG PARAMS');
+    	}     	
+    	return '{"result": 1}';
+    }
+    
+    
+    
+    public static dev__c getDev(string dev_code){
+    	if(dev_code == null ){
+    		throw new ClayException('dev_code must be provided');
+    	}
+    	 
+    	List<dev__c> devs = [select id,Name, Org__r.Name  from dev__c where code__c = :dev_code];
+    	
+    	if(devs.size() ==0){
+    		throw new ClayException('No registered developers found with code: ' + dev_code);
+    	}
+    	return devs.get(0);
+    }
+
+
+    public static app__c getApp(string app_name, string dev_code, string app_org, boolean strict){
+    	dev__c dev = getDev(dev_code);
+
+    	List<app__c> apps = [select id from app__c where name = :app_name and org__c = :dev.id];
+    	
+    	if(apps.size() == 0 && strict == true){
+    		throw new ClayException('App ' + app_name + ' not found in your organization' + dev_code);
+    	}
+    	if(devs.size() ==0){
+    		return null; 
+    	}
+    	return apps.get(0);
+    }
+
+}

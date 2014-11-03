@@ -1,0 +1,20 @@
+@isTest
+private class Test_ClayController {
+
+    
+
+    static testMethod void testGetDev() {
+		org__c org = new Org__c();
+		org.Name = 'A';
+		insert org;
+
+		dev__c dev= new Dev__c();
+		Dev__c.Code__c = 'abc';
+		dev.Org__c = org.id;
+		dev.email__C = 'your@email.com';
+		insert dev;
+		
+		system.assertEquals( ClayController.getDev('abc').id = dev.id );
+
+    }
+}

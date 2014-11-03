@@ -1,0 +1,26 @@
+@RestResource(urlMapping='/clay-api/*')
+global class  ClayController {
+    
+    //handleRest receives an REST Operation['get,post,put,del'] a url and a JSON
+
+	/*
+		Class Entry Point for Visualforce Remoting
+		It requires: 
+			An HTTP VERB that defines what operation to perform ['get,post,put,del']
+			An Url that defines the targeted object or custom operation to be performaned
+			An optional Fields argument for upsert and query operations
+	*/
+	
+	@HttpGet
+    global static String getAppVersion() {
+    	RestRequest req = RestContext.request;
+    	Map<String,String> queryReference  = new PageReference(req.requestURI).getParameters();
+
+    	string app_name = queryReference.get('app_name');
+    	string dev_code = queryReference.get('dev_code');
+    	if(app_name == null || dev_code == null){
+    		return RemoteTKController.makeError('Wrong params provided in query, app_name and dev_code required','WRONG PARAMS');
+    	}     	
+    	return '{"result": 1}';
+    }
+}

@@ -1,0 +1,84 @@
+@isTest
+private class Test_ClayController {
+
+    static testMethod void testGetDevError() {
+
+		Exception ex1;
+		try{
+			ClayController.getDev('abc');
+		}catch(Exception ex){
+			//ex1 = ex;
+		}
+		system.assertEquals(ex1, null);
+    }
+
+    static testMethod void testGetDev() {
+		org__c org = new Org__c();
+		org.Name = 'A';
+		insert org;
+
+		dev__c dev= new Dev__c();
+		dev.Code__c = 'abc';
+		dev.Org__c = org.id;
+		dev.email__C = 'your@email.com';
+		insert dev;	
+		
+		app__c app = new App__c();
+		app.name = 'An App';
+		app.version__c = 1;
+		app.org__c = org.id;
+		insert app;
+		
+		system.assertEquals( ClayController.getDev('abc').id , dev.id );
+    }
+    
+    static testMethod void testAuth() {
+    	string devJ = ClayController.getRouter(null, null, 'abc',null);
+    	Dev__c dev = (Dev__c)JSON.deserialize(devJ, Dev__c.class);
+    	system.assertEquals(dev.code__c, 'abc');
+    }
+    
+    
+     static testMethod void testGetVersion() {
+    	string app = ClayController.getRouter('GET_VERSION','the app', 'abc',null);
+    	
+    	system.assertEquals( app , '{}' );
+    
+    }
+
+     static testMethod void testGetVersionWithApp() {
+     	
+    	string appJ = ClayController.getRouter('GET_VERSION', 'An App', 'abc', 'A');
+    	
+    	app__c app = (App__c)JSON.deserializeUntyped( appJ, Sobject.class );
+    	
+    	system.assertEquals( app.Name , 'An App' );
+    
+    }
+
+
+     static testMethod void testGetAppWithError() {
+     	
+    	exception ee;
+    	try{
+    	string appJ = ClayController.getRouter('GET_APP', 'The App', 'abc', 'A');
+    	}catch(exception e){
+    		ee = e;
+    	}
+    	
+    	System.assert(ee != null);
+    
+    }
+
+     static testMethod void testGetApp() {
+     	
+    	string appJ = ClayController.getRouter('GET_APP', 'An App', 'abc', 'A');
+    	
+    	app__c app = (App__c)JSON.deserializeUntyped( appJ, App__c.class );
+    	
+    	system.assertEquals( app.Name , 'An App' );
+    
+    }
+
+    
+}

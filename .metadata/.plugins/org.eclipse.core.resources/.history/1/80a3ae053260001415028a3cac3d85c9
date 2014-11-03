@@ -1,0 +1,3 @@
+trigger Org_Insert_Before on Org__c (before insert) {
+
+}

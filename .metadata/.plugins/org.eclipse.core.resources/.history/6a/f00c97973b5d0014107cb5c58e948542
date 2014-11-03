@@ -1,0 +1,54 @@
+@RestResource(urlMapping='/clay-api/*')
+global class  ClayController {
+    
+    //handleRest receives an REST Operation['get,post,put,del'] a url and a JSON
+
+	/*
+		Class Entry Point for Visualforce Remoting
+		It requires: 
+			An HTTP VERB that defines what operation to perform ['get,post,put,del']
+			An Url that defines the targeted object or custom operation to be performaned
+			An optional Fields argument for upsert and query operations
+	*/
+	
+	@HttpGet
+    global static string authenticate() {
+    	RestRequest req = RestContext.request;
+
+
+    	string app_name = req.params.get('action');
+    	string app_name = req.params.get('app_name');
+    	string dev_code = req.params.get('dev_code');
+    	
+    	
+    	
+    	if(app_name == null || dev_code == null){
+    		return RemoteTKController.makeError('Wrong params provided in query, app_name and dev_code required','WRONG PARAMS');
+    	}     	
+    	return '{"result": 1}';
+    }
+
+	@HttpPost
+    global static string upsertApp() {
+    	RestRequest req = RestContext.request;
+
+
+    	string app_name = req.params.get('app_name');
+    	string dev_code = req.params.get('dev_code');
+    	if(app_name == null || dev_code == null){
+    		return RemoteTKController.makeError('Wrong params provided in query, app_name and dev_code required','WRONG PARAMS');
+    	}     	
+    	return '{"result": 1}';
+    }
+    
+    
+    public dev__c getDev(string dev_code){
+    	List<dev__c> devs = [select id from dev__c where dev_code__c = :dev_code];
+    	
+    	if(devs.size() ==0){
+    		throw new ClayException('No registered developers found with code: ' + dev_code);
+    	}
+    	return devs.get(0);
+    }
+
+}

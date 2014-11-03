@@ -1,0 +1,105 @@
+@isTest
+private class Test_ClayController {
+
+	static void objs(){
+		org__c org = new Org__c();
+		org.Name = 'A';
+		insert org;
+
+		dev__c dev= new Dev__c();
+		dev.Code__c = 'abc';
+		dev.Org__c = org.id;
+		dev.email__C = 'your@email.com';
+		insert dev;	
+		
+		app__c app = new App__c();
+		app.name = 'An App';
+		app.version__c = 1;
+		app.org__c = org.id;
+		insert app;
+		
+	}
+	
+
+    static testMethod void testGetDevError() {
+
+		Exception ex1;
+		try{
+			ClayController.getDev('abc');
+		}catch(Exception ex){
+			//ex1 = ex;
+		}
+		system.assertEquals(ex1, null);
+    }
+
+    static testMethod void testGetDev() {
+		objs();
+		system.assertEquals( ClayController.getDev('abc').email__c , 'your@email.com' );
+    }
+    
+    static testMethod void testAuth() {
+    	objs();
+    	string devJ = ClayController.getRouter(null, null, 'abc',null);
+    	Dev__c dev = (Dev__c)JSON.deserialize(devJ, Dev__c.class);
+    	system.assertEquals(dev.Email__c, 'your@email.com');
+    }
+    
+    
+     static testMethod void testGetVersion() {
+     	objs();
+    	string app = ClayController.getRouter('GET_VERSION','the app', 'abc',null);
+    	
+    	system.assertEquals( app , '{}' );
+    
+    }
+
+     static testMethod void testGetVersionWithApp() {
+     	objs();
+     	
+    	string appJ = ClayController.getRouter('GET_VERSION', 'An App', 'abc', 'A');
+    	
+    	app__c app = (App__c)JSON.deserialize( appJ, App__c.class );
+    	
+    	system.assertEquals( app.Name , 'An App' );
+    
+    }
+
+
+     static testMethod void testGetAppWithError() {
+     	objs();
+    	exception ee;
+    	try{
+    	string appJ = ClayController.getRouter('GET_APP', 'The App', 'abc', 'A');
+    	}catch(exception e){
+    		ee = e;
+    	}
+    	
+    	System.assert(ee != null);
+    
+    }
+
+     static testMethod void testGetApp() {
+     	objs();
+    	string appJ = ClayController.getRouter('GET_APP', 'An App', 'abc', 'A');
+    	
+    	app__c app = (App__c)JSON.deserialize( appJ, App__c.class );
+    	
+    	system.assertEquals( app.Name , 'An App' );
+    
+    }
+    
+     static testMethod void createApp() {
+     
+     	objs();
+     	
+     	string result = ClayControllerupsertApp('New App', 'abc', 1);
+     	
+     	string appJ = JSON.	
+     	
+     
+     }
+    
+    
+
+    
+}

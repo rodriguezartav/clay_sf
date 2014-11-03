@@ -1,0 +1,476 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<types xmlns="http://soap.sforce.com/2006/04/metadata">
+  <types isSubType="false">
+    <name>AccountCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>AccountOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>AnalyticSnapshot</name>
+  </types>
+  <types isSubType="false">
+    <name>ApexClass</name>
+    <members>ChangePasswordController</members>
+    <members>ClayController</members>
+    <members>ClayException</members>
+    <members>ExampleClass</members>
+    <members>ForgotPasswordController</members>
+    <members>IApexController</members>
+    <members>MyProfilePageController</members>
+    <members>MyProfilePageControllerTest</members>
+    <members>RemoteTKController</members>
+    <members>SiteLoginController</members>
+    <members>SiteRegisterController</members>
+    <members>Test_ClayController</members>
+    <members>Test_Security_RemoteController</members>
+    <members>Test_ThreeVotApiController</members>
+    <members>Test_ThreevotApiOperations</members>
+    <members>TestRemoteTKController</members>
+    <members>ThreeVotApiController</members>
+    <members>ThreeVotApiOperations</members>
+  </types>
+  <types isSubType="false">
+    <name>ApexComponent</name>
+    <members>SiteFooter</members>
+    <members>SiteHeader</members>
+    <members>SiteLogin</members>
+    <members>SitePoweredBy</members>
+    <members>ThreeVotComponent</members>
+  </types>
+  <types isSubType="false">
+    <name>ApexPage</name>
+    <members>AnswersHome</members>
+    <members>BandwidthExceeded</members>
+    <members>ChangePassword</members>
+    <members>Exception</members>
+    <members>FileNotFound</members>
+    <members>ForgotPassword</members>
+    <members>ForgotPasswordConfirm</members>
+    <members>IdeasHome</members>
+    <members>InMaintenance</members>
+    <members>MyProfilePage</members>
+    <members>SiteLogin</members>
+    <members>SiteRegister</members>
+    <members>SiteRegisterConfirm</members>
+    <members>SiteTemplate</members>
+    <members>StdExceptionTemplate</members>
+    <members>Unauthorized</members>
+    <members>UnderConstruction</members>
+  </types>
+  <types isSubType="false">
+    <members>Org_Insert_Before</members>
+    <name>ApexTrigger</name>
+  </types>
+  <types isSubType="false">
+    <name>ApprovalProcess</name>
+  </types>
+  <types isSubType="false">
+    <name>AssignmentRule</name>
+  </types>
+  <types isSubType="false">
+    <name>AutoResponseRule</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>BusinessProcess</name>
+  </types>
+  <types isSubType="false">
+    <name>CallCenter</name>
+  </types>
+  <types isSubType="false">
+    <name>CaseCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CaseOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>Community</name>
+    <members>Internal Ideas</members>
+  </types>
+  <types isSubType="false">
+    <name>ContactCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>ContactOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomApplication</name>
+    <members>Force_com</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>CustomField</name>
+    <members>App__c.Org__c</members>
+    <members>App__c.Version__c</members>
+    <members>App__c.Version_History__c</members>
+    <members>Dev__c.Code__c</members>
+    <members>Dev__c.Email__c</members>
+    <members>Dev__c.Org__c</members>
+    <members>Prospect__c.Comments__c</members>
+    <members>Prospect__c.Company__c</members>
+    <members>Prospect__c.Company_Type__c</members>
+    <members>Prospect__c.Email__c</members>
+    <members>Prospect__c.Other_Contact_Forms__c</members>
+    <members>Prospect__c.Overview__c</members>
+    <members>Prospect__c.Product__c</members>
+    <members>Prospect__c.Source__c</members>
+    <members>Prospect__c.Type__c</members>
+  </types>
+  <types isSubType="true" parent="CustomLabels">
+    <name>CustomLabel</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomLabels</name>
+    <members>CustomLabels</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObject</name>
+    <members>App__c</members>
+    <members>Dev__c</members>
+    <members>Org__c</members>
+    <members>Prospect__c</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomObjectTranslation</name>
+    <members>App__c-en_US</members>
+    <members>Dev__c-en_US</members>
+    <members>Org__c-en_US</members>
+    <members>Prospect__c-en_US</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomPageWebLink</name>
+  </types>
+  <types isSubType="false">
+    <name>CustomSite</name>
+    <members>sfc</members>
+  </types>
+  <types isSubType="false">
+    <name>CustomTab</name>
+    <members>App__c</members>
+    <members>Dev__c</members>
+    <members>Org__c</members>
+    <members>Prospect__c</members>
+  </types>
+  <types isSubType="false">
+    <name>Dashboard</name>
+    <members>CompanyDashboards</members>
+  </types>
+  <types isSubType="false">
+    <name>Document</name>
+    <members>SharedDocuments</members>
+  </types>
+  <types isSubType="false">
+    <name>EmailTemplate</name>
+    <members>unfiled$public</members>
+    <members>unfiled$public/ContactFollowUpSAMPLE</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewCommentNotificationSAMPLE</members>
+    <members>unfiled$public/SUPPORTSelfServiceNewUserLoginInformationSAMPLE</members>
+    <members>unfiled$public/SUPPORTSelfServiceResetPasswordSAMPLE</members>
+  </types>
+  <types isSubType="false">
+    <name>EscalationRule</name>
+  </types>
+  <types isSubType="false">
+    <name>ExternalDataSource</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>FieldSet</name>
+  </types>
+  <types isSubType="false">
+    <name>Flow</name>
+  </types>
+  <types isSubType="false">
+    <name>Group</name>
+    <members>Facturacion</members>
+    <members>Gerencia</members>
+    <members>Secretarial</members>
+  </types>
+  <types isSubType="false">
+    <name>HomePageComponent</name>
+    <members>Welcome to Force%2Ecom Free Edition</members>
+  </types>
+  <types isSubType="false">
+    <name>HomePageLayout</name>
+    <members>Dashboard Home Page Default</members>
+  </types>
+  <types isSubType="false">
+    <name>Layout</name>
+    <members>Account-Account Layout</members>
+    <members>App__c-App Layout</members>
+    <members>Asset-Asset Layout</members>
+    <members>Case-Case Layout</members>
+    <members>CaseClose-Close Case Layout</members>
+    <members>Contact-Contact Layout</members>
+    <members>Contract-Contract Layout</members>
+    <members>Dev__c-Dev Layout</members>
+    <members>Event-Event Layout</members>
+    <members>Global-Global Layout</members>
+    <members>Idea-Idea Layout</members>
+    <members>Lead-Lead Layout</members>
+    <members>Opportunity-Opportunity Layout</members>
+    <members>OpportunityLineItem-Opportunity Product Layout</members>
+    <members>Org__c-Org Layout</members>
+    <members>Pricebook2-Price Book Layout</members>
+    <members>PricebookEntry-Price Book Entry Layout</members>
+    <members>Product2-Product Layout</members>
+    <members>Prospect__c-Lead Layout</members>
+    <members>Solution-Solution Layout</members>
+    <members>Task-Task Layout</members>
+    <members>User-User Layout</members>
+  </types>
+  <types isSubType="false">
+    <name>LeadCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>LeadOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>Letterhead</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>ListView</name>
+    <members>Account.AllAccounts</members>
+    <members>Account.MyAccounts</members>
+    <members>Account.NewThisWeek</members>
+    <members>Activity.MyActivities</members>
+    <members>Activity.MyDelegatedActivities</members>
+    <members>Activity.MyTeamsActivities</members>
+    <members>Activity.TodaysTasks</members>
+    <members>Activity.UpcomingEvents</members>
+    <members>App__c.All</members>
+    <members>Asset.AllAssets</members>
+    <members>Case.AllOpenCases</members>
+    <members>Case.MyCases</members>
+    <members>Case.MyOpenCases</members>
+    <members>Contact.AllContacts</members>
+    <members>Contact.BirthdaysThisMonth</members>
+    <members>Contact.NewThisWeek</members>
+    <members>Contract.AllActivatedContracts</members>
+    <members>Contract.AllContracts</members>
+    <members>Contract.AllDraftContracts</members>
+    <members>Contract.AllInApprovalContracts</members>
+    <members>Contract.MyActivatedContracts</members>
+    <members>Contract.MyDraftContracts</members>
+    <members>Contract.MyInApprovalContracts</members>
+    <members>Idea.Ideas_Last_7_Days</members>
+    <members>Lead.AllOpenLeads</members>
+    <members>Lead.MyUnreadLeads</members>
+    <members>Lead.TodaysLeads</members>
+    <members>Opportunity.AllOpportunities</members>
+    <members>Opportunity.ClosingNextMonth</members>
+    <members>Opportunity.ClosingThisMonth</members>
+    <members>Opportunity.MyOpportunities</members>
+    <members>Opportunity.NewThisWeek</members>
+    <members>Opportunity.Won</members>
+    <members>Product2.AllProducts</members>
+    <members>Prospect__c.All</members>
+    <members>Solution.AllReviewedSolutions</members>
+    <members>Solution.AllUnreviewedSolutions</members>
+    <members>User.ActiveUsers</members>
+    <members>User.AdminUsers</members>
+    <members>User.AllUsers</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>NamedFilter</name>
+  </types>
+  <types isSubType="false">
+    <name>OpportunityCriteriaBasedSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>OpportunityOwnerSharingRule</name>
+  </types>
+  <types isSubType="false">
+    <name>PermissionSet</name>
+  </types>
+  <types isSubType="false">
+    <name>Profile</name>
+    <members>Acceso Basico</members>
+    <members>Admin</members>
+    <members>Asistencia Local</members>
+    <members>Chatter Free User</members>
+    <members>Chatter Moderator User</members>
+    <members>ContractManager</members>
+    <members>Facturacion</members>
+    <members>Force%2Ecom - Free User</members>
+    <members>Gerencia</members>
+    <members>Guest License User</members>
+    <members>MarketingProfile</members>
+    <members>Platform System Admin</members>
+    <members>ReadOnly</members>
+    <members>Regular Free User</members>
+    <members>sfc Profile</members>
+    <members>SolutionManager</members>
+    <members>Standard</members>
+  </types>
+  <types isSubType="false">
+    <name>Queue</name>
+  </types>
+  <types isSubType="false">
+    <name>QuickAction</name>
+    <members>LogACall</members>
+    <members>NewAccount</members>
+    <members>NewCase</members>
+    <members>NewChildCase</members>
+    <members>NewContact</members>
+    <members>NewEvent</members>
+    <members>NewGroup</members>
+    <members>NewGroupMember</members>
+    <members>NewLead</members>
+    <members>NewNote</members>
+    <members>NewOpportunity</members>
+    <members>NewTask</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>RecordType</name>
+  </types>
+  <types isSubType="false">
+    <name>RemoteSiteSetting</name>
+    <members>JungleDynamics</members>
+  </types>
+  <types isSubType="false">
+    <name>Report</name>
+    <members>unfiled$public</members>
+  </types>
+  <types isSubType="false">
+    <name>ReportType</name>
+  </types>
+  <types isSubType="false">
+    <name>Role</name>
+    <members>BusinessDevelopmentManager</members>
+    <members>CEO</members>
+    <members>MarketingManager</members>
+  </types>
+  <types isSubType="false">
+    <name>SamlSsoConfig</name>
+  </types>
+  <types isSubType="false">
+    <name>Scontrol</name>
+  </types>
+  <types isSubType="false">
+    <name>Settings</name>
+    <members>Activities</members>
+    <members>Address</members>
+    <members>Case</members>
+    <members>ChatterAnswers</members>
+    <members>Company</members>
+    <members>Contract</members>
+    <members>Forecasting</members>
+    <members>Ideas</members>
+    <members>Mobile</members>
+    <members>Opportunity</members>
+    <members>Product</members>
+    <members>Quote</members>
+    <members>Security</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>SharingReason</name>
+  </types>
+  <types isSubType="false">
+    <name>StandardObject</name>
+    <members>Account</members>
+    <members>AccountContactRole</members>
+    <members>Activity</members>
+    <members>Asset</members>
+    <members>Case</members>
+    <members>CaseContactRole</members>
+    <members>Contact</members>
+    <members>Contract</members>
+    <members>ContractContactRole</members>
+    <members>Event</members>
+    <members>Idea</members>
+    <members>Lead</members>
+    <members>Opportunity</members>
+    <members>OpportunityCompetitor</members>
+    <members>OpportunityContactRole</members>
+    <members>OpportunityLineItem</members>
+    <members>PartnerRole</members>
+    <members>Pricebook2</members>
+    <members>PricebookEntry</members>
+    <members>Product2</members>
+    <members>Site</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>User</members>
+  </types>
+  <types isSubType="false">
+    <name>StaticResource</name>
+    <members>SiteSamples</members>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>ValidationRule</name>
+  </types>
+  <types isSubType="true" parent="CustomObject">
+    <name>WebLink</name>
+    <members>Account.AltavistaNews</members>
+    <members>Account.GoogleMaps</members>
+    <members>Account.GoogleNews</members>
+    <members>Account.GoogleSearch</members>
+    <members>Account.HooversProfile</members>
+    <members>Account.YahooMaps</members>
+    <members>Campaign.ViewAllCampaignMembers</members>
+    <members>Campaign.ViewCampaignInfluenceReport</members>
+    <members>Contact.GoogleMaps</members>
+    <members>Contact.GoogleSearch</members>
+    <members>Contact.SendGmail</members>
+    <members>Contact.YahooMaps</members>
+    <members>Contact.YahooWeather</members>
+    <members>Lead.AltavistaNews</members>
+    <members>Lead.GoogleMaps</members>
+    <members>Lead.GoogleNews</members>
+    <members>Lead.GoogleSearch</members>
+    <members>Lead.HooversProfile</members>
+    <members>Lead.SendGmail</members>
+    <members>Lead.YahooMaps</members>
+  </types>
+  <types isSubType="false">
+    <name>Workflow</name>
+    <members>Account</members>
+    <members>App__c</members>
+    <members>Asset</members>
+    <members>Case</members>
+    <members>Contact</members>
+    <members>Contract</members>
+    <members>Dev__c</members>
+    <members>Event</members>
+    <members>Idea</members>
+    <members>Lead</members>
+    <members>Opportunity</members>
+    <members>OpportunityLineItem</members>
+    <members>Org__c</members>
+    <members>Organization</members>
+    <members>Product2</members>
+    <members>Prospect__c</members>
+    <members>Question</members>
+    <members>Reply</members>
+    <members>Site</members>
+    <members>SocialPersona</members>
+    <members>SocialPost</members>
+    <members>Solution</members>
+    <members>Task</members>
+    <members>User</members>
+    <members>UserLicense</members>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowAlert</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowFieldUpdate</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowOutboundMessage</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowRule</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowSend</name>
+  </types>
+  <types isSubType="true" parent="Workflow">
+    <name>WorkflowTask</name>
+  </types>
+</types>
